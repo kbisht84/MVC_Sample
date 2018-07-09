@@ -14,8 +14,15 @@ import android.widget.TextView;
 
 import com.example.kanakbisht.mvc_sample.modelView.CountItemViewModel;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    Button myButton,myButtonReset;
+    @BindView(R.id.button)
+    Button myButton;
+    @BindView(R.id.buttonReset)
+    Button myButtonReset;
+    @BindView(R.id.txt)
     TextView txtView;
     int count;
     private CountItemViewModel countItemViewModel;
@@ -24,10 +31,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myButton=findViewById(R.id.button);
-        myButtonReset=findViewById(R.id.buttonReset);
+        ButterKnife.bind(this);
+        //myButton=findViewById(R.id.button);
+        //myButtonReset=findViewById(R.id.buttonReset);
 
-        txtView=findViewById(R.id.txt);
+        //txtView=findViewById(R.id.txt);
         count=0;
         txtView.setText(Integer.toString(count));
 
